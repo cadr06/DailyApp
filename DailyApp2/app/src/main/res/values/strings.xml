@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DailyApp</string>
+    <string name="logo_dailyapp">Logo DailyApp</string>
+    <string name="dailyapp">DailyApp</string>
+    <string name="email">Email</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="pas_encore_de_compte_s_inscrire">Pas encore de compte ? S\'inscrire</string>
+    <string name="prenom">Prénom</string>
+    <string name="nom">Nom</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="d_j_un_compte_se_connecter">Déjà un compte ? Se connecter</string>
+    <string name="deconnexion">Déconnexion</string>
+    <string name="notifications">notifications</string>
+</resources>

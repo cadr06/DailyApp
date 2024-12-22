@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Couleurs de base -->
+    <color name="gray_900">#FF212121</color>     <!-- Gris très foncé pour le fond -->
+    <color name="gray_800">#FF424242</color>     <!-- Gris foncé pour les surfaces -->
+    <color name="gray_700">#FF616161</color>     <!-- Gris pour les éléments secondaires -->
+    <color name="gray_600">#FF757575</color>     <!-- Gris pour le texte secondaire -->
+
+    <!-- Couleurs pour le thème -->
+    <color name="primary">@color/gray_900</color>         <!-- Couleur principale -->
+    <color name="primary_variant">@color/gray_800</color> <!-- Variante de la couleur principale -->
+    <color name="secondary">@color/gray_700</color>       <!-- Couleur secondaire -->
+
+    <!-- Couleurs standards -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>           <!-- Pour les notifications/erreurs -->
+</resources>

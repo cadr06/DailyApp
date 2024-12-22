@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Déclaration de la version XML et de l'encodage -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Début du fichier manifeste et déclaration des espaces de noms -->
+
+    <!-- Permissions requises par l'application -->
+    <uses-permission android:name="android.permission.INTERNET" /><!-- Permission pour accéder à Internet -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /><!-- Permission pour vérifier l'état du réseau -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /><!-- Permission pour accéder à une localisation approximative -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /><!-- Permission pour accéder à une localisation précise -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /><!-- Permission pour utiliser un service en premier plan -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />   <!-- Permission pour afficher des notifications (Android 13+) -->
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DailyApp"
+        tools:targetApi="31">
+        <!-- Définition des propriétés de l'application -->
+        <!-- `allowBackup` : autorise la sauvegarde/restauration des données -->
+        <!-- `dataExtractionRules` et `fullBackupContent` : fichiers de configuration pour la sauvegarde -->
+        <!-- `icon` et `roundIcon` : icônes de l'application -->
+        <!-- `label` : nom de l'application affiché à l'utilisateur -->
+        <!-- `supportsRtl` : support des langues écrites de droite à gauche -->
+        <!-- `theme` : thème global de l'application -->
+        <!-- `tools:targetApi` : cible la version 31 (Android 12) pour certaines configurations -->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAHJZeqgUWtwu72JrSvDooACbv-Gl-lW7o" />
+        <!-- Clé API pour les services Google Maps -->
+
+        <service
+            android:name=".utils.NotificationService"
+            android:enabled="true"
+            android:exported="false" />
+        <!-- Déclaration d'un service pour gérer les notifications -->
+        <!-- `enabled` : le service est activé -->
+        <!-- `exported` : le service n'est pas accessible à d'autres applications -->
+
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.DailyApp">
+            <!-- Activité principale affichée au lancement de l'application -->
+            <!-- `exported` : cette activité peut être lancée par d'autres applications -->
+            <!-- `label` et `theme` : définissent son nom et son thème -->
+
+            <intent-filter>
+                <!-- Filtre d'intention pour indiquer que cette activité est le point d'entrée -->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- Action principale pour démarrer l'application -->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Catégorie pour que cette activité soit visible dans le lanceur -->
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.MainActivity" /><!-- Activité principale de l'application après le SplashScreen -->
+        <activity android:name=".ui.auth.LoginActivity" />  <!-- Activité pour l'écran de connexion -->
+        <activity android:name=".ui.auth.RegisterActivity" /><!-- Activité pour l'écran d'inscription -->
+        <activity android:name=".ui.tasks.AddEditTaskActivity" /><!-- Activité pour ajouter ou modifier une tâche -->
+        <activity android:name=".ui.tasks.TaskDetailActivity" /><!-- Activité pour afficher les détails d'une tâche -->
+        <activity
+            android:name=".ui.NotificationsActivity"
+            android:exported="false" />
+        <!-- Activité pour gérer les notifications, non accessible depuis d'autres applications -->
+    </application>
+    <!-- Fin de la déclaration de l'application -->
+</manifest>
